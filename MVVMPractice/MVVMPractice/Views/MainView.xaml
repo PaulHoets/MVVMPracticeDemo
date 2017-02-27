@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMPractice.MainView"
+             xmlns:viewModels ="clr-namespace:MVVMPractice"
+            
+             >
+
+    <ContentPage.BindingContext>
+        <viewModels:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout
+        x:Name="MyStack"
+        Orientation="Vertical"
+        Padding="20"
+        VerticalOptions="Center"
+        >
+
+
+        <Label 
+            Text="Xamarin | MVVM"
+            TextColor="Maroon"
+            FontSize="Large"
+               />
+        <Entry x:Name="NameEntry"
+               FontSize="Medium"
+               Text="{Binding Name}"
+               Placeholder="Your Name"/>
+        <Button
+            x:Name="HelloButton"
+            Text="Say Hello"
+            TextColor="White"
+            BackgroundColor="Teal"
+            FontSize="Medium"
+            Command="{Binding SayHelloCommand}"
+            />
+
+        <Label x:Name="HelloLabel"
+               FontSize="Medium"
+               Text="{Binding HelloMessage}"
+               TextColor="Navy"/>
+
+
+    </StackLayout>
+    
+    
+</ContentPage>
